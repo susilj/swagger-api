@@ -31,6 +31,10 @@ namespace api
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Generate Random Data API", Version = "v1" });
+
+                string xmlDocumentionFilePath = string.Format("{0}{1}.xml", System.AppDomain.CurrentDomain.BaseDirectory,typeof(Startup).Assembly.GetName().Name);
+
+                c.IncludeXmlComments(xmlDocumentionFilePath);
             });
         }
 

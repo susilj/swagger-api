@@ -12,6 +12,9 @@ namespace api.Controllers
     [Route("[action]")]
     public class GenerateController : Controller
     {
+        /// <summary>
+        /// List random names
+        /// </summary>
         [HttpGet]
         public IEnumerable<string> Names(Range range)
             => range.Of(Name.FullName);
